@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--ReceivingVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ReceivingVC" customModule="DelegateMayhem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vc6-aI-3nC">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="message receiver" id="8cg-r2-2Oi">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="leC-c1-Ln5">
+                                            <connections>
+                                                <segue destination="n3k-xM-OzQ" kind="show" identifier="showSendingVC" id="oAO-kX-8ht"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="send some text over here!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdE-fk-Jyi">
+                                <rect key="frame" x="16" y="68" width="343" height="531"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="OdE-fk-Jyi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Jb8-kr-2CW"/>
+                            <constraint firstItem="Vc6-aI-3nC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="L2V-pm-7jk"/>
+                            <constraint firstItem="Vc6-aI-3nC" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LNQ-Qt-9Ea"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OdE-fk-Jyi" secondAttribute="trailing" constant="16" id="Y4v-fM-fir"/>
+                            <constraint firstItem="OdE-fk-Jyi" firstAttribute="top" secondItem="Vc6-aI-3nC" secondAttribute="bottom" constant="24" id="cjx-Wc-hAC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OdE-fk-Jyi" secondAttribute="bottom" constant="68" id="jxG-sH-6Qb"/>
+                            <constraint firstItem="Vc6-aI-3nC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="l5E-2G-ZbM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="lblViewMessage" destination="OdE-fk-Jyi" id="Cib-d6-DeC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--SendingVC-->
+        <scene sceneID="owh-QD-XfJ">
+            <objects>
+                <viewController id="n3k-xM-OzQ" customClass="SendingVC" customModule="DelegateMayhem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P9l-fu-dpd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="type here!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8zn-tb-dpb">
+                                <rect key="frame" x="16" y="40" width="343" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="hiV-bn-feu"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxd-FK-cKZ">
+                                <rect key="frame" x="16" y="138" width="343" height="60"/>
+                                <color key="backgroundColor" red="0.27580957346538537" green="0.59500940207679509" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="L0m-ik-VMY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal" title="send it">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="SendButton_TouchUpInside:" destination="n3k-xM-OzQ" eventType="touchUpInside" id="K4P-tu-6Iu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eep-FX-FHM" firstAttribute="trailing" secondItem="vxd-FK-cKZ" secondAttribute="trailing" constant="16" id="1Ls-5M-PPW"/>
+                            <constraint firstItem="eep-FX-FHM" firstAttribute="trailing" secondItem="vxd-FK-cKZ" secondAttribute="trailing" constant="16" id="2xa-1C-yql"/>
+                            <constraint firstItem="8zn-tb-dpb" firstAttribute="leading" secondItem="eep-FX-FHM" secondAttribute="leading" constant="16" id="LsD-EW-PGI"/>
+                            <constraint firstItem="vxd-FK-cKZ" firstAttribute="top" secondItem="8zn-tb-dpb" secondAttribute="bottom" constant="38" id="Mze-7u-Azz"/>
+                            <constraint firstItem="vxd-FK-cKZ" firstAttribute="leading" secondItem="eep-FX-FHM" secondAttribute="leading" constant="16" id="Qrp-Ph-p2V"/>
+                            <constraint firstItem="vxd-FK-cKZ" firstAttribute="leading" secondItem="eep-FX-FHM" secondAttribute="leading" constant="16" id="WTZ-Ud-Et0"/>
+                            <constraint firstItem="8zn-tb-dpb" firstAttribute="top" secondItem="eep-FX-FHM" secondAttribute="top" constant="20" id="biN-bl-t9L"/>
+                            <constraint firstItem="eep-FX-FHM" firstAttribute="trailing" secondItem="8zn-tb-dpb" secondAttribute="trailing" constant="16" id="f2M-hx-4ob"/>
+                            <constraint firstItem="vxd-FK-cKZ" firstAttribute="top" secondItem="8zn-tb-dpb" secondAttribute="bottom" constant="38" id="j6k-pa-5hq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eep-FX-FHM"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtMessage" destination="8zn-tb-dpb" id="lrb-9L-IPY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yox-a4-oRg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1800.8" y="65.217391304347828"/>
+        </scene>
+    </scenes>
+</document>
